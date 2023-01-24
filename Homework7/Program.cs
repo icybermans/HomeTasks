@@ -125,3 +125,4 @@ Print2dArray(newArray);
 
 double[] averageArray = FindAverageInColumns(newArray);
 PrintArray(averageArray);
+
