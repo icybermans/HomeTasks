@@ -6,7 +6,7 @@ int[,] Create2dRandomIntArray(int row, int column)
     int[,] array = new int[row, column];
     for (int i = 0; i < row; i++)
         for (int j = 0; j < column; j++)
-            array[i, j] = new Random().Next(0, 5);
+            array[i, j] = new Random().Next(0, 15);
     return array;
 }
 
@@ -56,8 +56,8 @@ PrintArray(newArray);*/
 // Задайте прямоугольный двумерный массив. Напишите программу, которая 
 // будет находить строку с наименьшей суммой элементов.
 
-// метод для нахождения массивы сумм элементов по строкам
-/*int[] FindArrayWithSumOnRows(int[,] array){
+// метод для нахождения массива сумм элементов по строкам
+int[] FindArrayWithSumOnRows(int[,] array){
     int sum;
     int[] arraySumOnRows = new int[array.GetLength(0)];
     for(int i = 0; i < array.GetLength(0); i++){
@@ -70,7 +70,7 @@ PrintArray(newArray);*/
 
 // метод для нахождения номера минимального элемента в массиве (строки с минимальной 
 // суммой из предыдущего метода)
-int FindRowWithMinSum(int[] arr){
+/*int FindRowWithMinSum(int[] arr){
     int minPos = 0;
     for(int i = 1; i < arr.Length; i++) 
         if(arr[i] < arr[minPos]) minPos = i;
@@ -114,9 +114,15 @@ int[,] FindMultiMatrix(int[,] arr1, int[,] arr2){
     }
     else {
         Console.WriteLine("Matrices aren't agreed!!!");
-    };
+        for(int i = 0; i < matrix.GetLength(0); i++){
+            for(int j = 0; j < matrix.GetLength(1); j++){
+                matrix[i,j] = -1;
+            }
+        }
+    }
     return matrix;
-}
+} 
+
 Console.Write("Input a row number of 1st matrix: ");
 int r1 = Convert.ToInt32(Console.ReadLine());
 Console.Write("Input a column number of 1st matrix: ");
